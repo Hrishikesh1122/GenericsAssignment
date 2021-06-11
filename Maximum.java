@@ -36,12 +36,26 @@ public class Maximum {
 			max=num3;
 		return max;	
 	}
+	/**
+	 * @param str1
+	 * @param str2
+	 * @param str3
+	 * @return Maximum of String according to Lexicographic order
+	 */
+	public  String maxString(String str1 ,String str2 ,String str3) {
+		String max=str1;
+		if(str2.compareTo(max)>0)
+			max=str2;
+		if(str3.compareTo(max)>0)
+			max=str3;
+		return max;	
+	}
 
 	public static void main(String[] args) {
 		Maximum m = new Maximum();
 		System.out.println(m.maxInt(-3,55,8));
 		System.out.println(m.maxDouble(-3.5,10.5,-85.5));
-
+		System.out.println(m.maxString("Apple","Peach","Banana"));
 	}
 
 }
