@@ -6,6 +6,11 @@
  *
  **********************************************************/
 package com.hrishikesh.GenericsTestProjects;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+
 public class Maximum  {
 	
 	/**
@@ -22,6 +27,17 @@ public class Maximum  {
 			max=element3;
 		return max;	
 	}
+	
+	/**
+	 * UC4 : Taking more then 3 arguments n sorting them
+	 * @param <H>
+	 * @param arrayList
+	 */
+	public <H extends Comparable<H>> void maxInArrayList (ArrayList<H> arrayList) {
+		Collections.sort(arrayList);
+		for(H temp:arrayList)
+			System.out.println(temp);
+	}
 
 
 	public static void main(String[] args) {
@@ -37,6 +53,12 @@ public class Maximum  {
 		MyGenericClass<String> myclass1 = new MyGenericClass<>("Apple","Banana","Peru");
 		String trial2 = myclass1.maxOfAnything(myclass1.getVariable1(), myclass1.getVariable2(), myclass1.getVariable3());
 		System.out.println(trial2);
+		
+		ArrayList<Integer> arrayList = new ArrayList<>();
+		arrayList.add(4);arrayList.add(8);arrayList.add(25);arrayList.add(1);
+		m.maxInArrayList(arrayList);
+		
+		
 	}
 
 }

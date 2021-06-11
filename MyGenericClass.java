@@ -24,7 +24,7 @@ public class MyGenericClass <E> extends Maximum{
 	public void setVariable1(E variable1) {
 		this.variable1 = variable1;
 	}
-	public E getVariable2() {
+	public E getVariable2() {	
 		return variable2;
 	}
 	public void setVariable2(E variable2) {
