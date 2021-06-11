@@ -19,13 +19,23 @@ public class Maximum  {
 	 * @param element 3
 	 * @return Maximum of 3 of any Type
 	 */
-	public  <E extends Comparable<E>> E maxOfAnything(E element1 ,E element2 , E element3) {
+	public  <E extends Comparable<E>> void maxOfAnything(E element1 ,E element2 , E element3) {
 		E max=element1;
 		if(element2.compareTo(max)>0)
 			max=element2;
 		if(element3.compareTo(max)>0)
 			max=element3;
-		return max;	
+		
+		printMax(max);
+	}
+	
+	/**
+	 * Generic print method to print maximum value
+	 * @param <E>
+	 * @param max
+	 */
+	public <E> void printMax(E max) {
+		System.out.println(max);
 	}
 	
 	/**
@@ -42,17 +52,16 @@ public class Maximum  {
 
 	public static void main(String[] args) {
 		Maximum m = new Maximum();
-		System.out.println(m.maxOfAnything(20.55,55.8,8.8));
-		System.out.println(m.maxOfAnything(200,55,8));
-		System.out.println(m.maxOfAnything("A","B","C"));
+		m.maxOfAnything(20.55,55.8,8.8);
+		m.maxOfAnything(200,55,8);
+		m.maxOfAnything("A","B","C");
 		
 		MyGenericClass<Integer> myclass = new MyGenericClass<>(1,2,3);
-		Integer trial1 = myclass.maxOfAnything(myclass.getVariable1(), myclass.getVariable2(), myclass.getVariable3());
-		System.out.println(trial1);
+		myclass.maxOfAnything(myclass.getVariable1(), myclass.getVariable2(), myclass.getVariable3());
+	
 		
 		MyGenericClass<String> myclass1 = new MyGenericClass<>("Apple","Banana","Peru");
-		String trial2 = myclass1.maxOfAnything(myclass1.getVariable1(), myclass1.getVariable2(), myclass1.getVariable3());
-		System.out.println(trial2);
+		myclass1.maxOfAnything(myclass1.getVariable1(), myclass1.getVariable2(), myclass1.getVariable3());
 		
 		ArrayList<Integer> arrayList = new ArrayList<>();
 		arrayList.add(4);arrayList.add(8);arrayList.add(25);arrayList.add(1);
