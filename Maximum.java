@@ -29,6 +29,14 @@ public class Maximum  {
 		System.out.println(m.maxOfAnything(20.55,55.8,8.8));
 		System.out.println(m.maxOfAnything(200,55,8));
 		System.out.println(m.maxOfAnything("A","B","C"));
+		
+		MyGenericClass<Integer> myclass = new MyGenericClass<>(1,2,3);
+		Integer trial1 = myclass.maxOfAnything(myclass.getVariable1(), myclass.getVariable2(), myclass.getVariable3());
+		System.out.println(trial1);
+		
+		MyGenericClass<String> myclass1 = new MyGenericClass<>("Apple","Banana","Peru");
+		String trial2 = myclass1.maxOfAnything(myclass1.getVariable1(), myclass1.getVariable2(), myclass1.getVariable3());
+		System.out.println(trial2);
 	}
 
 }
