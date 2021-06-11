@@ -6,56 +6,29 @@
  *
  **********************************************************/
 package com.hrishikesh.GenericsTestProjects;
-public class Maximum {
+public class Maximum  {
 	
 	/**
-	 * @param num1
-	 * @param num2
-	 * @param num3
-	 * @return Maximum of 3 Integers
+	 * @param element 1
+	 * @param element 2
+	 * @param element 3
+	 * @return Maximum of 3 of any Type
 	 */
-	public  Integer maxInt(Integer num1 ,Integer num2 , Integer num3) {
-		Integer max=num1;
-		if(num2.compareTo(max)>0)
-			max=num2;
-		if(num3.compareTo(max)>0)
-			max=num3;
-		return max;	
-	}
-	/**
-	 * @param num1
-	 * @param num2
-	 * @param num3
-	 * @return Maximum of 3 Doubles
-	 */
-	public  Double maxDouble(Double num1 ,Double num2 , Double num3) {
-		Double max=num1;
-		if(num2.compareTo(max)>0)
-			max=num2;
-		if(num3.compareTo(max)>0)
-			max=num3;
-		return max;	
-	}
-	/**
-	 * @param str1
-	 * @param str2
-	 * @param str3
-	 * @return Maximum of String according to Lexicographic order
-	 */
-	public  String maxString(String str1 ,String str2 ,String str3) {
-		String max=str1;
-		if(str2.compareTo(max)>0)
-			max=str2;
-		if(str3.compareTo(max)>0)
-			max=str3;
+	public  <E extends Comparable<E>> E maxOfAnything(E element1 ,E element2 , E element3) {
+		E max=element1;
+		if(element2.compareTo(max)>0)
+			max=element2;
+		if(element3.compareTo(max)>0)
+			max=element3;
 		return max;	
 	}
 
+
 	public static void main(String[] args) {
 		Maximum m = new Maximum();
-		System.out.println(m.maxInt(-3,55,8));
-		System.out.println(m.maxDouble(-3.5,10.5,-85.5));
-		System.out.println(m.maxString("Apple","Peach","Banana"));
+		System.out.println(m.maxOfAnything(20.55,55.8,8.8));
+		System.out.println(m.maxOfAnything(200,55,8));
+		System.out.println(m.maxOfAnything("A","B","C"));
 	}
 
 }
